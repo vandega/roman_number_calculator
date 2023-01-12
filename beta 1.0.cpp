@@ -17,7 +17,8 @@ int main()
     
     cout << "Welcome, This is beta verison of roman calculator, it has some rules to work correctly" << endl;
     cout << "1) calculator can count correctly from 1 to 100, after that may be some errors (not sure)" << endl;
-    cout << "2) first move must be + because calculator start from 0, so just press + \n" << endl;
+    cout << "2) added error detecting as like (IIII, VIIII, XXXX and other)" << endl;
+    cout << "3) first move must be + because calculator start from 0, so just press + \n" << endl;
     
     
     while(InputNumber != "exit"){
@@ -90,8 +91,7 @@ int main()
     
     int Total;
     string RomanAnswer;
-    cout << "neter number: ";
-    
+    cout << "answer is: ";
     Total = TotalSum;
     
    
@@ -129,5 +129,9 @@ int main()
             break;
         }
     }
+    
+    cout << "thanks fro chack my work ^_^";
+    
+    
     return 0;
 }
