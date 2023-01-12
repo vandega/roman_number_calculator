@@ -2,7 +2,8 @@
 #include <unordered_map>
 #include <map>
 #include <string.h>
-using namespace std; // ar sheexoo arr asheexoo
+using namespace std;
+
 
 string InputNumber, Piece, Calc;
     int Sum = 0, TotalSum = 0, Trap = 0;
