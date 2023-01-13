@@ -130,7 +130,7 @@ int main()
         }
     }
     
-    cout << "thanks fro chack my work ^_^";
+    cout << "  \n\nthanks fro chack my work ^_^";
     
     
     return 0;
