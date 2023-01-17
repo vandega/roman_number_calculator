@@ -1,5 +1,8 @@
 BETA 1.0
-    method works in main, have some rules to work correct.
+
+    method works in main,
+    
+    have some rules to work correct.
 
     range max 499
 
@@ -10,6 +13,7 @@ BETA 1.0
 
 
 V 1.0
+
     works correct,
 
     has incorect input control.
