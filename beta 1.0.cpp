@@ -129,9 +129,5 @@ int main()
             break;
         }
     }
-    
-    cout << "thanks fro chack my work ^_^";
-    
-    
     return 0;
 }
