@@ -26,3 +26,5 @@ V 1.0
 
     Code more easy to undertand
     
+    !!! maybe get some minor bugs :3
+    
