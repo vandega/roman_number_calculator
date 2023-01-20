@@ -14,9 +14,11 @@ BETA 1.0
 
 V 1.0
 
-    works correct,
+    Works correct,
+    
+    lowercase detect and uppercase convrtor  exp:  a => A,   b = B,    B = B...
 
-    has incorect input control.
+    Incorect input control.
 
     range also 499, but easy to edit code just need to add some new values as {500, "D"}, {1000, "M"} and add code pices in int_to_roman.
 
