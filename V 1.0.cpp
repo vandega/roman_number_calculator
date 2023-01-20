@@ -1,11 +1,12 @@
 #include <iostream>
-#include <unordered_map>
 #include <map>
+#include <unordered_map>
+#include <cctype>
 #include <string.h>
 using namespace std;
 
-string InputNumber, Piece, Calc, Past_move, Number_for_roman, Move_for_calculation;
-int Sum = 0, TotalSum = 0;
+string InputNumber, Piece, Calc, Past_move, Number_for_roman, Move_for_calculation, Letter, Word;
+int Sum = 0, TotalSum = 0, Belay = 0;
 
 int Roman_to_int(string InputNumber){
     
@@ -15,6 +16,17 @@ int Roman_to_int(string InputNumber){
     unordered_map<string, int>ErrorNum;
     ErrorNum = {{"IIII", 1000}, {"VVVV", 1001}, {"XXXX", 1002}, {"CCCC", 1003}};
     
+    // convert lover letter to upper letter  a => A;
+    
+    for(int j = 0; j < InputNumber.size(); j++){
+        char Letter = toupper(InputNumber[j]);
+        Word += Letter;
+    }
+    
+    InputNumber = Word;
+    Word = "";
+    
+    // for every new input, cleans last input sum;
     if(Sum > 0){
         Sum = 0;
     }
@@ -60,9 +72,13 @@ int Roman_to_int(string InputNumber){
         }
     }
     
+    // for first enter, it gives sum value to TotalSum, only for first time
     if(TotalSum == 0){
-        TotalSum = Sum;
-        Sum = 0;
+        if(Belay == 0){
+            TotalSum = Sum;
+            Sum = 0;
+            Belay += 1;
+        }
     }
 
     return Sum;   
@@ -95,6 +111,9 @@ void Int_to_roman(int TotalSum){
     cout << "answer is: ";
     Total = TotalSum;
     
+    if(TotalSum == 0){
+        cout << "\n\t\tFACT: \nRoman system did not need any value to represent zero. \nBut instead of zero, the word NULLA was used by the Romans to specify zero. \nIn this case NULLA is 0, or less then nothing.";
+    }
    
     while(true){
         if(Total >= 100){
@@ -130,7 +149,8 @@ void Int_to_roman(int TotalSum){
             break;
         }
     }
-    cout << "" <<endl;
+    cout << " " <<endl;
+    
 }
 
 void Algorithm(){
@@ -141,10 +161,10 @@ void Algorithm(){
     
     while(Number_for_roman != "exit"){
         // this comment are for controling values
-        // cout << "sum -> " << Sum << endl;
-        // cout << "Past_move -> " << Past_move << endl;
-        // cout << "TotalSum -> " << TotalSum << endl;
-        // cout << "---------------------------------" << endl;
+        cout << "sum -> " << Sum << endl;
+        cout << "Past_move -> " << Past_move << endl;
+        cout << "TotalSum -> " << TotalSum << endl;
+        cout << "---------------------------------" << endl;
         
         
         if(Number_for_roman == "exit"){
@@ -177,7 +197,5 @@ void Algorithm(){
 int main()
 {
     Algorithm();
-    // Int_to_roman(243);
-    
     return 0;
 }
