@@ -149,7 +149,7 @@ void Int_to_roman(int TotalSum){
             break;
         }
     }
-    cout << " " <<endl;
+    cout << "\n\nInput Exit to finish.\n\n " <<endl;
     
 }
 
